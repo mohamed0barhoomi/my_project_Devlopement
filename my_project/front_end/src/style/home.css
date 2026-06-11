@@ -1,0 +1,202 @@
+.home {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  
+}
+
+/* ================= TITLE ================= */
+.title {
+  margin: 20px 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* ================= SKY SECTION ================= */
+.sky {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(to bottom, #87ceeb, #ffffff);
+  overflow: hidden;
+}
+
+/* ================= CLOUDS ================= */
+.cloud {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cloud1 {
+  top: 40px;
+  left: 80px;
+}
+
+.cloud2 {
+  top: 80px;
+  left: 250px;
+  animation-delay: 1s;
+}
+
+.cloud3 {
+  top: 30px;
+  left: 450px;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ================= AIRPORTS ================= */
+.airport {
+  position: absolute;
+  bottom: 20px;
+  font-weight: bold;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.airport-left {
+  left: 20px;
+  
+}
+
+.airport-right {
+  right: 20px;
+}
+
+/* ================= PLANE ANIMATION ================= */
+.plane {
+  position: absolute;
+  font-size: 4rem;
+  top: 200px;
+  left: 60px;
+
+  animation: flight 6s linear infinite;
+}
+
+/* ✈️ FLIGHT PATH */
+@keyframes flight {
+
+  0% {
+    transform: translate(0px, 100px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(120px, 50px) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(250px, 50px) rotate(-20deg);
+  }
+
+  35% {
+    transform: translate(400px, -100px) rotate(-35deg);
+  }
+
+  45% {
+    transform: translate(550px, -140px) rotate(0deg);
+  }
+
+  60% {
+    transform: translate(650px, -140px) rotate(0deg);
+  }
+  75% {
+    transform: translate(800px, -100px) rotate(25deg);
+  }
+
+  85% {
+    transform: translate(950px, 50px) rotate(15deg);
+  }
+
+  100% {
+    transform: translate(1100px, 100px) rotate(-30deg); /* RESET */
+  }
+}
+
+/* ================= WELCOME ================= */
+.welcome {
+  margin: 40px 0;
+  padding: 20px;
+}
+
+/* ================= BOTTOM SECTION ================= */
+.bottom-section {
+  margin-top: 60px;
+  padding: 50px;
+  background: #f5f7ff;
+}
+
+/* ================= FEATURES ================= */
+.features h2,
+.destinations h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* ================= DESTINATIONS ================= */
+.destinations {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.destinations h2 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+/* container becomes grid of items */
+.destinations ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* each item becomes a card */
+.destinations li {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  cursor: pointer;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* hover effect */
+.destinations li:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: #eaf3ff;
+}

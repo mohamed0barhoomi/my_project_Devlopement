@@ -1,0 +1,218 @@
+.page {
+  min-height: 100vh;
+  background: #edf1fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.ticket {
+  width: 900px;
+  max-width: 100%;
+  display: flex;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.ticket-left {
+  flex: 2;
+  background: white;
+  padding: 35px;
+  position: relative;
+}
+
+.ticket-left::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: #edf1fb;
+  border-radius: 50%;
+}
+
+.ticket-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.ticket-header span,
+.passenger-section span {
+  color: #999;
+  font-size: 13px;
+}
+
+.ticket-header h4 {
+  margin-top: 6px;
+  color: #222;
+}
+
+.separator {
+  border-top: 2px dashed #d4d4d4;
+  margin: 20px 0;
+}
+
+.route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.city h2 {
+  margin: 5px 0;
+  color: #222;
+}
+
+.city span {
+  color: #555;
+  font-size: 14px;
+}
+
+.city small {
+  color: #999;
+}
+
+.flight-line {
+  font-size: 35px;
+  color: #5a7cff;
+}
+
+.passenger-section {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.passenger-section h3,
+.passenger-section h4 {
+  margin-top: 8px;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.ticket-right {
+  width: 280px;
+  background: linear-gradient(
+    180deg,
+    #6f8fff,
+    #4d73ff
+  );
+  position: relative;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ticket-right::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: #edf1fb;
+  border-radius: 50%;
+}
+
+.ticket-right::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 30px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  right: -120px;
+  bottom: -120px;
+}
+
+.airline-title {
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.qr-container {
+  background: white;
+  padding: 12px;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.scan-text {
+  margin-top: 20px;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.flight-number {
+  margin-top: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.download-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  background: #4d73ff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .ticket {
+    flex-direction: column;
+  }
+
+  .ticket-right {
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  .ticket-left {
+    padding: 25px;
+  }
+
+  .route {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .passenger-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

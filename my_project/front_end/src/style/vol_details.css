@@ -1,0 +1,91 @@
+.vol_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 700px;
+    margin: 50px auto;
+    background: linear-gradient(145deg, #ffffff, #f7f9fc);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border-radius: 15px;
+
+    overflow: hidden;
+    padding: 20px;
+
+    font-style: italic;
+    gap: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+.vol_details:hover {
+    transform: translateY(-5px);
+}
+
+.city_img {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    object-fit: cover;
+
+    border-radius: 12px;
+    margin-top: 10px;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 300px;
+
+    background: #f1f5ff;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+select {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+}
+
+h3 {
+    margin: 7px;
+    font-weight: 500;
+    color: #333;
+}
+.reserve_btn {
+    margin-top: 15px;
+    padding: 10px 100px;
+    
+    background: linear-gradient(135deg, #0077ff, #00c6ff);
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.reserve_btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.reserve_btn:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,29 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    gap: 7px;
+
+    max-width: 500px;
+    margin: 30px auto;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+h5{
+    margin: 0;
+}
+button{
+    border: 1px solid;
+    border-radius: 12px;
+    background-color: rgba(5, 5, 195, 0.293);
+    font-size: 1.1em;
+    width: 55px;
+}
+button:hover{
+     transform: scale(1.05);
+    transition: 0.3s;
+    cursor: pointer;
+}

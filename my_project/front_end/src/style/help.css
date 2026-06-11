@@ -1,0 +1,30 @@
+.help-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.help-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.help-section {
+    margin-bottom: 25px;
+}
+
+.help-section h3 {
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.help-section p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+}

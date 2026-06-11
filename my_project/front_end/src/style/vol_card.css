@@ -1,0 +1,45 @@
+.vol_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    border: 2px solid rgb(167, 165, 165);
+    border-radius: 10px; 
+    max-width: 270px; 
+    font-style: italic;
+}
+.flag{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+}
+.flag img{
+    width: 20px;
+}
+#face_card{
+  background-color: rgba(240, 248, 255, 0.6);
+  width: 150px;
+  height: 170px;
+  padding: 5px;
+  border:solid white;
+  border-radius: 12px;
+}
+.Link_to_det{
+    text-decoration: none;
+    border: solid white;
+    border-radius: 12px;
+    background-color: rgba(2, 2, 245, 0.882);
+    width: 50px;
+    padding: 4px;
+    font-size: 1.1em;
+    color: white;
+}
+
+.list_vol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
