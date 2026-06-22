@@ -1,0 +1,114 @@
+.avion_card {
+  width: 260px;
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: Arial, sans-serif;
+  border-left: 5px solid #2563eb;
+}
+
+.avion_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.avion_card h3 {
+  font-size: 18px;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.avion_card p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 5px 0;
+}
+
+.avion_card h4 {
+  font-size: 14px;
+  color: #374151;
+  margin-top: 6px;
+}
+
+/* buttons container style */
+.avion_card button {
+  margin: 10px 5px 0 5px;
+   padding: 4px 8px 4px 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* update button */
+.avion_card button:first-of-type {
+  background-color: #2563eb;
+  color: white;
+}
+
+.avion_card button:first-of-type:hover {
+  background-color: #1e40af;
+}
+
+/* delete button */
+.avion_card button:last-of-type {
+  background-color: #ef4444;
+  color: white;
+}
+
+.avion_card button:last-of-type:hover {
+  background-color: #b91c1c;
+}
+
+
+.add_avion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: 100px;
+  padding: 10px 48%;
+  background-color: rgb(29, 231, 42);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.update_btn {
+  background: #0077ff;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.delete_btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* dialog reuse same style as vol/pilote */
+dialog {
+  border: none;
+  border-radius: 20px;
+  padding: 0;
+  width: 90%;
+  max-width: 500px;
+}
+
+dialog::backdrop {
+  background: rgba(0,0,0,0.5);
+}

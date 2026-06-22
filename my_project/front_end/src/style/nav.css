@@ -6,12 +6,12 @@
     border: 2px solid rgba(105, 199, 240, 0.27);
 
     max-width: 1300px;
-    margin: 20px auto 10px;
+    margin: 18px auto 12px;
     padding: 8px 15px;
 
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
 
     /* IMPORTANT */
     overflow: visible;
@@ -20,14 +20,14 @@
 .linkk {
     text-decoration: none;
     font-size: 1.1rem;
-    color: black;
+    color: var(--text);
 
-    border: 1.5px solid rgb(28, 26, 26);
-    border-radius: 10px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
 
     padding: 6px 10px;
 
-    background-color: rgba(21, 140, 225, 0.2);
+    background-color: var(--primary-soft);
 
     transition: 0.3s;
 }
@@ -47,11 +47,12 @@
     width: 230px;
     height: 35px;
 
-    border: 2px solid #3498db;
+    border: 1px solid var(--border);
     border-radius: 12px;
 
     padding: 0 10px;
     outline: none;
+    background: var(--surface-soft);
 }
 
 /* PROFILE MENU */
@@ -82,10 +83,10 @@
 
     width: 180px;
 
-    background: white;
+    background: var(--surface);
     border-radius: 12px;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow);
 
     display: flex;
     flex-direction: column;
@@ -101,9 +102,9 @@
     padding: 12px 15px;
 
     text-decoration: none;
-    color: #333;
+    color: var(--text);
 
-    background: white;
+    background: var(--surface);
     border: none;
 
     text-align: left;
@@ -115,13 +116,36 @@
 
 .dropdown a:hover,
 .dropdown button:hover {
-    background: rgba(105, 199, 240, 0.15);
+    background: var(--primary-soft);
 }
 
 .dropdown button {
     position: relative;
     left: 40px;
-    color: #e74c3c;
+    color: #c0392b;
     font-weight: bold;
     border-top: 1px solid #eee;
+}
+.logout{
+    color: white;
+    font-weight: bold;
+    border-top: 1px solid #eee;
+    background-color: #d9534f;
+    padding: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+.admin_h{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 6px 50px;
+
+    background-color: var(--primary-soft);
+
+    transition: 0.3s;
 }

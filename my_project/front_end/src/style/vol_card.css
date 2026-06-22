@@ -4,10 +4,13 @@
     justify-content: center;
     align-items: center;
     gap: 7px;
-    border: 2px solid rgb(167, 165, 165);
-    border-radius: 10px; 
+  border: 1px solid var(--border);
+  border-radius: 14px; 
     max-width: 270px; 
-    font-style: italic;
+  font-style: normal;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 10px;
 }
 .flag{
     display: flex;
@@ -18,18 +21,18 @@
     width: 20px;
 }
 #face_card{
-  background-color: rgba(240, 248, 255, 0.6);
+  background-color: var(--surface-soft);
   width: 150px;
   height: 170px;
   padding: 5px;
-  border:solid white;
+  border: 1px solid var(--border);
   border-radius: 12px;
 }
 .Link_to_det{
     text-decoration: none;
-    border: solid white;
+    border: 1px solid var(--border);
     border-radius: 12px;
-    background-color: rgba(2, 2, 245, 0.882);
+    background-color: var(--primary);
     width: 50px;
     padding: 4px;
     font-size: 1.1em;
@@ -42,4 +45,174 @@
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.buttons button{
+    padding: 4px 8px 4px 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.list_vol {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Add button */
+.add_avion {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add_avion:hover {
+  background: #245fd2;
+  transform: scale(1.05);
+}
+
+
+
+
+
+/* Form container */
+dialog button{
+    background-color: red;
+    color: white;
+    border-radius:12px ;
+}
+
+
+.form_update{
+  
+  max-width: 600px;
+  margin: 30px auto;
+  background: var(--surface);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.4s ease;
+}
+.form-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+  background: var(--surface);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.4s ease;
+}
+
+.form-container,.form_update h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--text);
+}
+
+/* Form */
+.vol-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+.vol-form input,
+.vol-form select,
+.vol-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+  background: var(--surface-soft);
+}
+
+.vol-form input:focus,
+.vol-form select:focus,
+.vol-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(47, 111, 237, 0.12);
+}
+
+/* Textarea */
+.vol-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit button */
+.vol-form button {
+  padding: 14px;
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.vol-form button:hover {
+  background: #245fd2;
+}
+
+.vol-form button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* Message */
+.vol-form p {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .add_avion {
+    width: 90%;
+  }
 }

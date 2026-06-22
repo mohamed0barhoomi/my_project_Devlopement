@@ -13,8 +13,12 @@ import Ticket from './components/user/Ticket';
 import { useEffect, useState } from 'react';
 import History from './components/user/History';
 import { useDispatch, useSelector } from 'react-redux';
-import { get_vol } from './redux/reducer/vol_reducer';
-import { conserve, get_history, logout } from './redux/reducer/user_reducer';
+import { get_vol } from './redux/reducer/user/vol_reducer';
+import { conserve, get_history, logout } from './redux/reducer/user/user_reducer';
+import Admin_home from './components/admin/Admin_home';
+import List_pilote from './components/admin/List_pilote';
+import List_avion from './components/admin/List_avion';
+import List_vol_admin from './components/admin/List_vol';
 
 function App() {
    const dispatch = useDispatch()
@@ -39,6 +43,10 @@ function App() {
         <Route path='/vol' element={<List_vol vol={search} />} />
         <Route path='/ticket/:id' element={<Ticket />} />
         <Route path='/history' element={<History />} />
+        <Route path='/admin_home' element={<Admin_home />} />
+        <Route path='/pilote' element={<List_pilote />} />
+        <Route path='/avion' element={<List_avion />} />
+        <Route path='/gestion_vol' element={<List_vol_admin />} />
        </Routes>
        
        

@@ -1,7 +1,8 @@
 .home {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: inherit;
   overflow-x: hidden;
+  color: var(--text);
   
 }
 
@@ -10,13 +11,14 @@
   margin: 20px 0;
   font-size: 2.5rem;
   font-weight: bold;
+  color: var(--text);
 }
 
 /* ================= SKY SECTION ================= */
 .sky {
   position: relative;
   height: 300px;
-  background: linear-gradient(to bottom, #87ceeb, #ffffff);
+  background: linear-gradient(to bottom, #dceeff, #f8fbff);
   overflow: hidden;
 }
 
@@ -55,10 +57,10 @@
   position: absolute;
   bottom: 20px;
   font-weight: bold;
-  background: white;
+  background: var(--surface);
   padding: 8px 12px;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
 }
 
 .airport-left {
@@ -129,7 +131,7 @@
 .bottom-section {
   margin-top: 60px;
   padding: 50px;
-  background: #f5f7ff;
+  background: linear-gradient(180deg, #f7f9fd 0%, #eef4fb 100%);
 }
 
 /* ================= FEATURES ================= */
@@ -148,11 +150,11 @@
 }
 
 .card {
-  background: white;
+  background: var(--surface);
   width: 250px;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
   transition: 0.3s ease;
 }
 
@@ -183,12 +185,12 @@
 
 /* each item becomes a card */
 .destinations li {
-  background: white;
+  background: var(--surface);
   padding: 15px 25px;
   border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 500;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
   transition: 0.3s ease;
   cursor: pointer;
   min-width: 120px;
@@ -198,5 +200,5 @@
 /* hover effect */
 .destinations li:hover {
   transform: translateY(-8px) scale(1.05);
-  background: #eaf3ff;
+  background: var(--primary-soft);
 }

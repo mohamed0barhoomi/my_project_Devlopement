@@ -6,7 +6,7 @@ import jsPDF from "jspdf";
 
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { get_history } from "../../redux/reducer/user_reducer";
+import { get_history } from "../../redux/reducer/user/user_reducer";
 
 
 const Ticket = ({ ticket = {} }) => {

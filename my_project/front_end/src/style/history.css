@@ -6,26 +6,27 @@
     max-width: 800px;
     height: 240px;
     margin: 30px auto;
-    background: #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    border-radius: 14px;
+    border: 1px solid var(--border);
 
 }
 .history img{
     border-radius: 12px;
 }
 .delete{
-    border: 1px solid;
+    border: 1px solid var(--border);
     border-radius: 12px;
-    background-color: red;
+    background-color: #d9534f;
     color: white;
     padding: 2px;
 }
 .see_ticket{
-    border: 1px solid;
+    border: 1px solid var(--border);
     border-radius: 12px;
     width: 100px;
-    background-color: rgb(64, 72, 228);
+    background-color: var(--primary);
     color: white;
     padding: 2px;
 }

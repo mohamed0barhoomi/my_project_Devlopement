@@ -1,0 +1,20 @@
+.admin_home {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+}
+
+.admin_home a {
+  text-decoration: none;
+  background: var(--primary);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.admin_home a:hover {
+  background: #245fd2;
+}

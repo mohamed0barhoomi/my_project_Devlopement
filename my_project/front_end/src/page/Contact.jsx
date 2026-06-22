@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import "../style/contact.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { get_history } from '../redux/reducer/user_reducer'
+import { get_history } from '../redux/reducer/user/user_reducer'
 
 const Contact = () => {
   const dispatch = useDispatch()

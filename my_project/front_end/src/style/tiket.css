@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  background: #edf1fb;
+  background: linear-gradient(180deg, #eef4fb 0%, #e8eef7 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@
 
 .ticket-left {
   flex: 2;
-  background: white;
+  background: var(--surface);
   padding: 35px;
   position: relative;
 }
@@ -36,7 +36,7 @@
   transform: translateY(-50%);
   width: 36px;
   height: 36px;
-  background: #edf1fb;
+  background: #eef4fb;
   border-radius: 50%;
 }
 
@@ -48,17 +48,17 @@
 
 .ticket-header span,
 .passenger-section span {
-  color: #999;
+  color: var(--muted);
   font-size: 13px;
 }
 
 .ticket-header h4 {
   margin-top: 6px;
-  color: #222;
+  color: var(--text);
 }
 
 .separator {
-  border-top: 2px dashed #d4d4d4;
+  border-top: 2px dashed var(--border);
   margin: 20px 0;
 }
 
@@ -70,21 +70,21 @@
 
 .city h2 {
   margin: 5px 0;
-  color: #222;
+  color: var(--text);
 }
 
 .city span {
-  color: #555;
+  color: var(--muted);
   font-size: 14px;
 }
 
 .city small {
-  color: #999;
+  color: var(--muted);
 }
 
 .flight-line {
   font-size: 35px;
-  color: #5a7cff;
+  color: var(--primary);
 }
 
 .passenger-section {
@@ -106,8 +106,8 @@
   width: 280px;
   background: linear-gradient(
     180deg,
-    #6f8fff,
-    #4d73ff
+    #5c7cf0,
+    #3e63d3
   );
   position: relative;
   color: white;
@@ -127,7 +127,7 @@
   transform: translateY(-50%);
   width: 36px;
   height: 36px;
-  background: #edf1fb;
+  background: #eef4fb;
   border-radius: 50%;
 }
 
@@ -136,7 +136,7 @@
   position: absolute;
   width: 250px;
   height: 250px;
-  border: 30px solid rgba(255, 255, 255, 0.08);
+  border: 30px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   right: -120px;
   bottom: -120px;
@@ -173,11 +173,12 @@
 ========================= */
 
 .download-btn {
+  /* width: 100px; */
   margin-top: 25px;
   padding: 12px 30px;
   border: none;
   border-radius: 10px;
-  background: #4d73ff;
+  background: var(--primary);
   color: white;
   cursor: pointer;
   font-size: 16px;

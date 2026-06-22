@@ -9,9 +9,7 @@ const AddVolForm = () => {
     time_dep: "",
     prix: "",
     description: "",
-    airline: "",
-    seats: "",
-    class_type: "economy",
+    
   });
 
   const [loading, setLoading] = useState(false);

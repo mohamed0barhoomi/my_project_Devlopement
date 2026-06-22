@@ -3,22 +3,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-style: italic;
+    font-style: normal;
     gap: 7px;
 
     max-width: 500px;
     margin: 30px auto;
-    background: #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    border-radius: 14px;
+    border: 1px solid var(--border);
 }
 h5{
     margin: 0;
 }
 button{
-    border: 1px solid;
+    border: 1px solid var(--border);
     border-radius: 12px;
-    background-color: rgba(5, 5, 195, 0.293);
+    background-color: var(--primary-soft);
+    color: var(--text);
     font-size: 1.1em;
     width: 55px;
 }

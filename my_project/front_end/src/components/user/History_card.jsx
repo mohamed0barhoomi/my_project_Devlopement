@@ -1,7 +1,7 @@
 import React from 'react'
 import "../../style/history.css"
 import { useDispatch } from 'react-redux'
-import { delete_history, get_history } from '../../redux/reducer/user_reducer'
+import { delete_history, get_history } from '../../redux/reducer/user/user_reducer'
 import {  useNavigate } from 'react-router-dom'
 const History_card = ({history}) => {
     const Navigate = useNavigate()

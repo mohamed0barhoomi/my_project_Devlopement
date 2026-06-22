@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import {useForm} from "react-hook-form"
 import { useDispatch, useSelector } from 'react-redux'
 import {Link, useNavigate} from "react-router-dom"
-import { login_user } from '../redux/reducer/user_reducer'
-import { get_vol } from '../redux/reducer/vol_reducer'
+import { login_user } from '../redux/reducer/user/user_reducer'
+import { get_vol } from '../redux/reducer/user/vol_reducer'
 
 const Login = () => {
     const{error,is_loading,isauth,admin}=useSelector(state => state.user)
@@ -26,9 +26,9 @@ const Login = () => {
         <img src="GPT.png" alt="logo" width={"80px"}/>
         <h4 className='welcome'>Vous n'avez pas de compte ? <Link to ="/register">create acount</Link></h4>
       <input type="email" placeholder="Email" {...register("email", {required: true, pattern: /^\S+@\S+$/i})} />
-      {errors.email && <p className='err'>{errors.email.type}</p>}
+      {errors.email && <p className='err'>email{errors.email.type}</p>}
       <input type="password" placeholder="pass" {...register("pass", {})} />
-      {errors.pass && <p className='err'>{errors.pass.type}</p>}
+      {errors.pass && <p className='err'>password {errors.pass.type}</p>}
 
       <input className='submit' type="submit" onClick={()=>{dispatch(get_vol())}} />
       </form>

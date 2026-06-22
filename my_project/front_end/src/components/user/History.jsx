@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import History_card from './History_card'
-import { get_history } from '../../redux/reducer/user_reducer'
+import { get_history } from '../../redux/reducer/user/user_reducer'
 
 const History = () => {
   const dispatch = useDispatch()

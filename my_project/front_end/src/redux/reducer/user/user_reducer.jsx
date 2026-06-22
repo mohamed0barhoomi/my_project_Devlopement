@@ -80,7 +80,7 @@ const user_reducer = createSlice({
     initialState:{
         error:null,
         is_loading:false,
-        admin:null,
+        admin:localStorage.getItem("admin") || null,
         token:localStorage.getItem("token") || null ,
         isauth:Boolean(localStorage.getItem("isAuth")) || null,
         user:JSON.parse(localStorage.getItem("user")) || null,
@@ -133,6 +133,7 @@ const user_reducer = createSlice({
         state.admin=action.payload.admin
         state.token = action.payload.token;
         state.user=action.payload.user
+        if(action.payload.admin) localStorage.setItem("admin",action.payload.admin)
         localStorage.setItem("user", JSON.stringify(action.payload.user));
         localStorage.setItem("token", action.payload.token);
         localStorage.setItem("isAuth", "true");

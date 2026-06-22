@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Vol_card from './Vol_card'
 import "../../style/vol_card.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { get_vol } from '../../redux/reducer/vol_reducer'
+import { get_vol } from '../../redux/reducer/user/vol_reducer'
 
 
 

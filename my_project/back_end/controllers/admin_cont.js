@@ -34,10 +34,38 @@ const register_admin=async(req,res)=>{
 
 
 
-
+//controlles get 
+const get_pilote = async(req,res)=>{
+    try{
+        const list_pilote= await pilote.find()
+        res.status(200).json({mssg:"list pilote",pilote:list_pilote})
+    }
+    catch(err){
+        res.status(500).json({mssg:"erreur server / get pilote",err:err.message})
+    }
+}
+const get_avion = async(req,res)=>{
+    try{
+        const list_avion=await avion.find()
+        res.status(200).json({mssg:"list avion",avion:list_avion})
+    }
+    catch(err){
+        res.status(500).json({mssg:"erreur server / get avion",err:err.message})
+    }
+}
+const get_vol = async(req,res)=>{
+    try{
+        const list_vol=await vol.find().populate("pilote_id").populate("avion_id")
+        return res.status(200).json({mssg:"list vol",vol:list_vol})
+    }
+    catch(err){
+        res.status(500).json({mssg:"erreur server / get vol",err:err.message})
+    }
+}
 // controllers create
 const create_pilote= async(req,res)=>{
-    try{const {name,email,CIN,NP} = req.body
+    try{
+    const {name,email,CIN,NP} = req.body
     const find_pilote=await pilote.findOne({NP:NP,CIN:CIN})
     if(find_pilote) return res.status(400).json({mssg:"pilote was existe"})
     const new_pilote = await pilote.create({name,email,CIN,NP})
@@ -62,11 +90,11 @@ const create_avion = async(req,res)=>{
 }
 const create_vol = async(req,res)=>{
     try{
-        const {vil_dep,vil_arr,date_dep,time_dep,prix,pilote_id,avion_id}=req.body
+        const {img,map,vil_dep,vil_arr,date_dep,time_dep,prix,pilote_id,avion_id}=req.body
         const find_vol=await vol.findOne({date_dep,pilote_id,avion_id})
         if(find_vol) return res.status(400).json({mssg:"vol was exist"})
-        const new_vol=await vol.create({vil_dep,vil_arr,date_dep,time_dep,prix,pilote_id,avion_id})
-        res.status(201).json({mssg:"avion was create",avion:new_vol})
+        const new_vol=await vol.create({img,map,vil_dep,vil_arr,date_dep,time_dep,prix,pilote_id,avion_id})
+        res.status(201).json({mssg:"avion was create",vol:new_vol})
     }
     catch(err){
         res.status(500).json({mssg:"erreur server /create vol",err:err.message})
@@ -79,12 +107,18 @@ const create_vol = async(req,res)=>{
 //controllers update
 const update_pilote=async(req,res)=>{
    try{ 
-    const NumP= req.params.NP
-    const {name,email,CIN,NP}=req.body
-    const find_pilote=await pilote.findOne({NP:NumP})
-    if(!find_pilote) return res.status(404).json({msg:"pilote not gound to update"})
-    const up_pilote = await pilote.findOneAndUpdate({NP:NumP},{name:name || find_pilote.name ,email: email || find_pilote.email , CIN:CIN || find_pilote.CIN},  { new: true })
-    return res.status(201).json({mssg:"pilote was update ",pilote:up_pilote})
+    const id= req.params.id
+    const {img,name,email,CIN,NP}=req.body
+    const find_pilote=await pilote.findOne({_id:id})
+    if(!find_pilote) return res.status(404).json({msg:"pilote not found to update"})
+    const up_pilote = await pilote.findOneAndUpdate({_id:id},
+                                                    {img:img || find_pilote.img,
+                                                    name:name || find_pilote.name ,
+                                                    email: email || find_pilote.email , 
+                                                    CIN:CIN || find_pilote.CIN,
+                                                     NP:NP || find_pilote.NP},
+                                                  { new: true })
+    return res.status(200).json({mssg:"pilote was update ",pilote:up_pilote})
     }
     catch(err){
         res.status(500).json({mssg:"erreur server / update pilote",err:err.message})
@@ -93,14 +127,15 @@ const update_pilote=async(req,res)=>{
 
 const update_avion = async(req,res)=>{
     try{
-    const Name_av=req.params.name
-    const find_av=await avion.findOne({name:Name_av})
+    const id=req.params.id
+    console.log("avion id :",id)
+    const find_av=await avion.findOne({_id:id})
     if(! find_av) return res.status(404).json({mssg:"avion not found / up avion"})
-    const {name,capasite,localisation}=req.body
-    const up_av = await avion.findOneAndUpdate({name:Name_av},
+    const {name,capasiter,localisation}=req.body
+    const up_av = await avion.findOneAndUpdate({_id:id},
                                                {
                                                 name:name || find_av.name,
-                                                capasite:capasite || find_av.capasite,
+                                                capasiter:capasiter || find_av.capasiter,
                                                 localisation:localisation || find_av.localisation                                                                       
                                                 },
                                                 {new:true}
@@ -115,12 +150,14 @@ const update_avion = async(req,res)=>{
 const update_vol = async(req,res)=>{
     try{
     const id_vol=req.params.id
-    console.log("id:",id_vol)
+    console.log("id update :",id_vol)
+    console.log("rq.body :",req.body)
     const find_vol=await vol.findOne({_id:id_vol})
     if(! find_vol) return res.status(404).json({mssg:"vol not found / up avion"})
-    const {vil_dep,vil_arr,date_dep,time_dep,prix,pilote_id,avion_id}=req.body
+    const {img,map,vil_dep,vil_arr,date_dep,time_dep,prix,pilote_id,avion_id}=req.body
     const up_vol = await vol.findOneAndUpdate({_id:id_vol},
-                                               {
+                                               {img:img || find_vol.img,
+                                                map:map || find_vol.map,
                                                 vil_dep:vil_dep || find_vol.vil_dep,
                                                 vil_arr:vil_arr || find_vol.vil_arr,                                                                      
                                                 date_dep:date_dep || find_vol.date_dep,                                                                      
@@ -131,7 +168,7 @@ const update_vol = async(req,res)=>{
                                                 },
                                                 {new:true}
                                                 )
-    return res.status(201).json({mssg:"vol was update",avion:up_vol})
+    return res.status(201).json({mssg:"vol was update",vol:up_vol})
    }
    catch(err){
     return res.status(500).json({mssg:"erreur server / up vol",err:err.message})
@@ -171,10 +208,11 @@ const delete_avion = async(req,res)=>{
 const delete_vol = async(req,res)=>{
     try{
         const id = req.params.id
+        console.log("id VOL : ",id)
         const find_vol=await vol.findOne({_id:id})
         if(! find_vol) return res.status(404).json({mssg:"vol not found / to delete"})
         await vol.findOneAndDelete({_id:id})
-        res.status(202).json({mssg:`vol : ${find_vol.vil_dep} to  ${find_vol.vil_arr} was deleted`})
+        res.status(202).json({mssg:`vol : ${find_vol.vil_dep}  to   ${find_vol.vil_arr} was deleted`})
 
     }
     catch(err){
@@ -186,5 +224,9 @@ const delete_vol = async(req,res)=>{
 
 
 
-module.exports = {register_admin,create_pilote,create_avion,create_vol,update_pilote,update_avion,update_vol,delete_avion,delete_pilote,delete_vol}
+module.exports = {register_admin,
+    get_pilote,get_avion,get_vol,
+    create_pilote,create_avion,create_vol,
+    update_pilote,update_avion,update_vol,
+    delete_avion,delete_pilote,delete_vol}
 

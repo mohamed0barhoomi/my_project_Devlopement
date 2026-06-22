@@ -2,16 +2,17 @@
     max-width: 900px;
     margin: 50px auto;
     padding: 30px;
-    background-color: #ffffff;
+    background-color: var(--surface);
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
 .help-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #333;
+    color: var(--text);
 }
 
 .help-section {
@@ -19,12 +20,12 @@
 }
 
 .help-section h3 {
-    color: #0077cc;
+    color: var(--primary);
     margin-bottom: 10px;
 }
 
 .help-section p {
-    color: #555;
+    color: var(--muted);
     line-height: 1.6;
     font-size: 1rem;
 }
