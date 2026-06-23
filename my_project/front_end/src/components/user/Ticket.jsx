@@ -10,17 +10,26 @@ import { get_history } from "../../redux/reducer/user/user_reducer";
 
 
 const Ticket = ({ ticket = {} }) => {
+
   const dispatch = useDispatch()
   useEffect(()=>{
     dispatch(get_history())
   }, [dispatch])
   const vol_id= useParams().id
+
+  const {admin_history} =useSelector(state => state.admin)
+  const admin_hist=admin_history?.find(hit => hit.vol[0]._id===vol_id)
+ 
+
   const {list_vol} = useSelector(state => state.vol)
   const {user,history,is_loading} = useSelector(state => state.user)
   console.log("user : ",user)
   console.log("history from tiket :",history)
-  const this_history=history?.find(hit => hit.vol[0]._id===vol_id) 
+  const find_hist = history?.find(hit => hit.vol[0]._id===vol_id) 
+  const this_history=find_hist? find_hist:admin_hist
   console.log("this history :",this_history)
+  
+  
   
 
   

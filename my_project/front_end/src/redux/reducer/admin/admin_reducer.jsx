@@ -38,6 +38,23 @@ const get_avion = createAsyncThunk("/get_admin_avion",async (_, { rejectWithValu
 );
 
 
+const get_history = createAsyncThunk("get history ",async (_,{rejectWithValue})=>{
+    try{
+        console.log("get_history has work")
+        const res= await axios.get("/admin/get_history")
+        console.log("res.data :",res.data)
+        return res.data
+    }
+    catch(err){
+        return rejectWithValue(err.response.data.mssg)
+    }
+})
+
+
+
+
+
+
 
 
 // create
@@ -149,7 +166,8 @@ const admin_reducer=createSlice({
         isauth:Boolean(localStorage.getItem("isAuth")) || null,
         vol:[],
         pilote:[],
-        avion:[]
+        avion:[],
+        admin_history:[]
     },
     reducers:{
 
@@ -197,6 +215,21 @@ const admin_reducer=createSlice({
             state.is_loading=false
             state.error=action.payload
         })
+        builder.addCase(get_history.pending,(state)=>{
+            state.error=null
+            state.is_loading=true
+        })
+        builder.addCase(get_history.fulfilled,(state,action)=>{
+            state.is_loading=false
+            state.error=null
+            state.admin_history=action.payload.history
+        })
+        builder.addCase(get_history.rejected,(state,action)=>{
+            state.is_loading=false
+            state.error=action.payload
+        })
+
+
 
 
 
@@ -327,7 +360,7 @@ const admin_reducer=createSlice({
 
 })
 export default admin_reducer.reducer
-export {get_vol,get_pilote,get_avion,
+export {get_vol,get_pilote,get_avion,get_history,
       create_pilote,create_avion,create_vol,
     delete_vol,delete_avion,delete_pilote,
     up_vol,up_avion,up_pilote};

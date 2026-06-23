@@ -2,7 +2,8 @@ const { get_pilote,get_avion,get_vol,
         create_pilote, create_avion, create_vol,
         update_pilote, update_avion, update_vol,
         delete_pilote, delete_avion, delete_vol, 
-        register_admin
+        register_admin,
+        get_history
     } = require("../controllers/admin_cont")
 
 
@@ -24,6 +25,7 @@ router.post("/register",
 router.get("/get_pilote",get_pilote)
 router.get("/get_avion",get_avion)
 router.get("/get_vol",get_vol)
+router.get("/get_history",get_history)
 
 
 // router create

@@ -19,6 +19,7 @@ import Admin_home from './components/admin/Admin_home';
 import List_pilote from './components/admin/List_pilote';
 import List_avion from './components/admin/List_avion';
 import List_vol_admin from './components/admin/List_vol';
+import Admin_history from './components/admin/Admin_history';
 
 function App() {
    const dispatch = useDispatch()
@@ -28,6 +29,7 @@ function App() {
   useEffect(() => {
     if (location.pathname === "/") {
       dispatch(logout())
+      
     }
   }, [location, dispatch])
   return (
@@ -47,6 +49,8 @@ function App() {
         <Route path='/pilote' element={<List_pilote />} />
         <Route path='/avion' element={<List_avion />} />
         <Route path='/gestion_vol' element={<List_vol_admin />} />
+        <Route path='/user_reservetion' element={<Admin_history />} />
+
        </Routes>
        
        

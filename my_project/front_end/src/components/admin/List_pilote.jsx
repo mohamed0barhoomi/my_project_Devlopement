@@ -107,6 +107,7 @@ const List_pilote = () => {
               value={form.email}
               onChange={handleChange}
               required
+              pattern
             />
 
             <input

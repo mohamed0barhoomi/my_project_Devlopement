@@ -8,6 +8,7 @@ const admin = require("../models/admin_schima")
 const bcrypt = require("bcrypt")
 const jtw = require("jsonwebtoken")
 const {validationResult}= require("express-validator")
+const historique = require("../models/historique")
 
 const register_admin=async(req,res)=>{
     try{
@@ -62,6 +63,21 @@ const get_vol = async(req,res)=>{
         res.status(500).json({mssg:"erreur server / get vol",err:err.message})
     }
 }
+
+
+const get_history=async(req,res)=>{
+    try{
+        const list_history=await historique.find().populate("owner")
+        return res.status(200).json({mssg:"list history :",history:list_history})
+    }
+    catch(err){
+         res.status(500).json({mssg:"error server /get history ",err:err.message})
+    }
+}
+
+
+
+
 // controllers create
 const create_pilote= async(req,res)=>{
     try{
@@ -177,7 +193,7 @@ const update_vol = async(req,res)=>{
 }
 
 
-// controllers router
+// controllers delete
 const delete_pilote = async(req,res)=>{
     try{
         const id = req.params.id
@@ -224,8 +240,11 @@ const delete_vol = async(req,res)=>{
 
 
 
+
+
+
 module.exports = {register_admin,
-    get_pilote,get_avion,get_vol,
+    get_pilote,get_avion,get_vol,get_history,
     create_pilote,create_avion,create_vol,
     update_pilote,update_avion,update_vol,
     delete_avion,delete_pilote,delete_vol}
